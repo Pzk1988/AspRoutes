@@ -1,2 +1,5 @@
 /TestResults
 /packages
+/UrlsAndRoutes/bin
+/UrlsAndRoutes.Tests/bin
+/UrlsAndRoutes.Tests/obj
