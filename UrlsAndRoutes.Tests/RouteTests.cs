@@ -76,12 +76,14 @@ namespace UrlsAndRoutes.Tests
         [TestMethod]
         public void TestIncomingRoutes()
         {
-            TestRouteMatch("~/Admin/Index", "Admin", "Index");
-            TestRouteMatch("~/One/Two", "One", "Two");
+            TestRouteMatch("~/Admin/Index", "Admin", "Index", new { id = "DefaultId" });
+            TestRouteMatch("~/One/Two", "One", "Two", new { id = "DefaultId" });
             TestRouteFail("~/Admin/Index/Segment/s");
-            //TestRouteFail("~/Admin1");
-            TestRouteMatch("~/One", "One", "Index");
-            TestRouteMatch("~/", "Home", "Index");
+            TestRouteMatch("~/Admin1", "Admin1", "Index");
+            TestRouteMatch("~/One", "One", "Index", new { id = "DefaultId" });
+            TestRouteMatch("~/", "Home", "Index", new { id = "DefaultId" });
+
+            TestRouteMatch("~/Admin/Index/cos", "Admin", "Index", new { id = "cos" });
         }
     }
 }

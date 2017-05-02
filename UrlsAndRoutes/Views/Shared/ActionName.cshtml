@@ -14,7 +14,13 @@
     <div> 
         <div>This controller is : @ViewBag.controller</div>
         <div>This action is : @ViewBag.action</div>
-        <div>Gowno : @ViewBag.msg</div>
+        <div>This url : @ViewBag.url</div>
+        <div>@Html.ActionLink("This is a link",
+                              "CustomVariable",
+                              new { id = "Hello" },
+                              new { @style = "color:red" })</div>
+        <div>@Html.ActionLink("This is", "Index", "Customer")</div>
+        <div>This is a link: @Url.Action("Index", "Home", new { id = "MyID" })</div>
     </div>
 </body>
 </html>

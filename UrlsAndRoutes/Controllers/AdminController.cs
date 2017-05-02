@@ -9,12 +9,11 @@ namespace UrlsAndRoutes.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: Admiin
-        public ActionResult Index(string name = null)
+        public ActionResult Index()
         {
-            Debug.WriteLine(name);
             ViewBag.controller = "Admin";
             ViewBag.action = "Index";
+            ViewBag.url = HttpContext.Request.Url;
             return View("ActionName");
         }
     }

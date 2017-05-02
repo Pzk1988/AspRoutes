@@ -11,17 +11,9 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: null,
-                url: "Gowno/{name}",
-                defaults: new {controller = "Customer", action = "List", name = "defaultowe gowno" });
-
-            routes.MapRoute(
-                name: null,
-                url: "{controller}/{action}/{name}",
-                defaults: new { name = "cos" });
+            routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
                 name: null,
